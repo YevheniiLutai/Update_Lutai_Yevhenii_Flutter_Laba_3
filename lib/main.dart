@@ -12,7 +12,6 @@ void main() => runApp(MyAdaptingApp());
 class MyAdaptingApp extends StatelessWidget {
   @override
   Widget build(context) {
-
     return MaterialApp(
       title: 'Adaptive Music App',
       theme: ThemeData(
@@ -144,7 +143,6 @@ class _AndroidDrawer extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => ProfileTab()));
             },
           ),
-          // Long drawer contents are often segmented.
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Divider(),
