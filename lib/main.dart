@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'cart_tab.dart';
 import 'news_tab.dart';
 import 'profile_tab.dart';
 import 'settings_tab.dart';
@@ -83,6 +84,12 @@ class _PlatformAdaptingHomePageState extends State<PlatformAdaptingHomePage> {
               defaultTitle: ProfileTab.title,
               builder: (context) => ProfileTab(),
             );
+          case 3 :
+            return CupertinoTabView(
+            defaultTitle: MyApp.title,
+            builder: (context) => MyApp(),
+          );
+
           default:
             assert(false, 'Unexpected tab');
             return null;
@@ -132,6 +139,15 @@ class _AndroidDrawer extends StatelessWidget {
               Navigator.pop(context);
               Navigator.push<void>(
                   context, MaterialPageRoute(builder: (context) => NewsTab()));
+            },
+          ),
+          ListTile(
+            leading: MyApp.androidIcon,
+            title: Text(MyApp.title),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push<void>(
+                  context, MaterialPageRoute(builder: (context) => MyApp()));
             },
           ),
           ListTile(
